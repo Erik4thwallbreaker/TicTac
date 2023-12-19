@@ -1,2 +1,4 @@
 # Files to ignore
 scribbles.txt
+.DS_Store
+__pycache__
