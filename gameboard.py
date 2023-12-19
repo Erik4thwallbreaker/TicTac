@@ -42,3 +42,7 @@ class GameBoard:
 
 	def pla(self, hotkey):
 		self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] = self.turn % 2
+
+
+	def rem(self, hotkey):
+		self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] = -1
