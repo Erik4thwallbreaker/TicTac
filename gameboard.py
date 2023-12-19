@@ -56,3 +56,9 @@ class GameBoard:
 
 	def incTurn(self):
 		self.turn = self.turn + 1
+		
+	#TODO:	Method to ask for piece placement
+	#		Method to ask for peace removal
+	#		Method to check if any player has won
+	#		Method to play a single turn, including all the UI, input handling, gameboard manipulation, turn increasement and winn checking. Might in the future also include UI to pause the game
+	#		Method to start the game, hence successively play turn after turn.
