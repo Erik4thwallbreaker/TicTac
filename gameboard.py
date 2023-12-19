@@ -57,6 +57,12 @@ class GameBoard:
 	def incTurn(self):
 		self.turn = self.turn + 1
 		
+	def askForPlacement(self):
+		hotkey = input("Where do you want to place your piece? :")
+		while not (hotkey in (["1","4","7","q","a","z"]+["2","5","8","w","s","x"]+["3","6","9","e","d","c"])):
+			hotkey = input("Invalid key. Where do you want to place your piece? :")
+		self.pla(hotkey)
+
 	#TODO:	Method to ask for piece placement
 	#		Method to ask for peace removal
 	#		Method to check if any player has won
