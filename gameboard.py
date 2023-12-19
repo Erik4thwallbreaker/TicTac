@@ -46,3 +46,6 @@ class GameBoard:
 
 	def rem(self, hotkey):
 		self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] = -1
+
+	def incTurn(self):
+		self.turn = self.turn + 1
