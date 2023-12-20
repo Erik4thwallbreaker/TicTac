@@ -69,6 +69,12 @@ class GameBoard:
 			hotkey = input("Invalid key. Which piece do you want to remove? :")
 		self.rem(hotkey)
 
+	def mirrorBoard(self):
+		newState = [self.state[i] for i in reversed(range(3))]
+		return GameBoard(state = newState, turn = self.turn)
+
+		
+
 	#TODO:	Method to ask for piece placement
 	#		Method to ask for peace removal
 	#		Method to check if any player has won
