@@ -73,8 +73,10 @@ class GameBoard:
 		newState = [self.state[i] for i in reversed(range(3))]
 		return GameBoard(state = newState, turn = self.turn)
 
+	def flipBoard(self):
+		newState = [[self.state[j][i] for j in range(3)] for i in reversed(range(3))]
+		return GameBoard(state = newState, turn = self.turn)
 		
-
 	#TODO:	Method to ask for piece placement
 	#		Method to ask for peace removal
 	#		Method to check if any player has won
