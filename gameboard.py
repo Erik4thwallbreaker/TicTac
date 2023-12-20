@@ -62,6 +62,12 @@ class GameBoard:
 		while not (hotkey in (["1","4","7","q","a","z"]+["2","5","8","w","s","x"]+["3","6","9","e","d","c"])):
 			hotkey = input("Invalid key. Where do you want to place your piece? :")
 		self.pla(hotkey)
+		
+	def askForRemoval(self):
+		hotkey = input("Which piece do you want to remove? :")
+		while not (hotkey in (["1","4","7","q","a","z"]+["2","5","8","w","s","x"]+["3","6","9","e","d","c"])):
+			hotkey = input("Invalid key. Which piece do you want to remove? :")
+		self.rem(hotkey)
 
 	#TODO:	Method to ask for piece placement
 	#		Method to ask for peace removal
