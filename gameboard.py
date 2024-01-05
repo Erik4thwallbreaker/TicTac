@@ -77,6 +77,18 @@ class GameBoard:
 		newState = [[self.state[j][i] for j in range(3)] for i in reversed(range(3))]
 		return GameBoard(state = newState, turn = self.turn)
 		
+	def hasWon(self):		#How should I implement turning the board 90deg and reconsider?
+		virt = self
+		for i in range(2):
+			for j in range(3):
+				if virt.state[j][0] == virt.state[j][1] == virt.state[j][2] >= 0:
+					return virt.state[j][0]			
+			if virt.state[0][0] == virt.state[1][1] == virt.state[2][2] >= 0:
+				return virt.state[0][0]			
+			if i == 0:
+				virt = virt.flipBoard()
+		return -1
+
 	#TODO:	Method to ask for piece placement
 	#		Method to ask for peace removal
 	#		Method to check if any player has won
