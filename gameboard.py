@@ -89,6 +89,15 @@ class GameBoard:
 				virt = virt.flipBoard()
 		return -1
 
+	def playTurn(self):
+		print("   Turn %r: (Player %r)   " %(self.turn, self.turn % 2) )
+		print("________________________")
+		self.print()
+		if self.turn >= 6: self.askForRemoval()
+		self.askForPlacement()
+		self.turn += 1
+		print()
+
 	#TODO:	Method to ask for piece placement
 	#		Method to ask for peace removal
 	#		Method to check if any player has won
