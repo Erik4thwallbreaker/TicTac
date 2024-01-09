@@ -98,8 +98,8 @@ class GameBoard:
 		self.turn += 1
 		print()
 
-	#TODO:	Method to ask for piece placement
-	#		Method to ask for peace removal
-	#		Method to check if any player has won
-	#		Method to play a single turn, including all the UI, input handling, gameboard manipulation, turn increasement and winn checking. Might in the future also include UI to pause the game
+	#TODO:	
+	#		Make a single helping method to give the correct string tokens for each player X and O.
+	#		Edit the print() method to display game turn on the same line.
+	#		Edit the placement method to only allow placing pieces on unused squares.
 	#		Method to start the game, hence successively play turn after turn.
