@@ -18,14 +18,7 @@ class GameBoard:
 		currentline = "| "
 		for i in range(3):
 			for j in range(3):
-				# currentline += str(self.state[i][j])
-				if self.state[i][j] == -1:
-					currentline += " "
-				elif self.state[i][j] == 0:
-					currentline += "X"
-				elif self.state[i][j] == 1:
-					currentline += "O"
-
+				currentline += gametoken(self.state[i][j])
 				if j != 2: currentline += " "
 			currentline += " |"
 			print(currentline)
