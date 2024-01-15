@@ -3,6 +3,16 @@ class GameBoard:
 		self.state = state
 		self.turn = turn
 
+	@staticmethod
+	def gametoken(value):
+		if value <= -1:
+			return " "
+		elif value % 2 == 0:
+			return "X"
+		elif value % 2 == 1:
+			return "O"
+		else: return "E"
+
 	def print(self):
 		print(" ------- ")
 		currentline = "| "
