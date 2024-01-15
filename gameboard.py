@@ -14,16 +14,19 @@ class GameBoard:
 		else: return "E"
 
 	def print(self):
-		print(" ------- ")
-		currentline = "| "
+		print("               ------- ")
+		currentline = " Turn: " + str(self.turn) + "      | "
 		for i in range(3):
 			for j in range(3):
 				currentline += GameBoard.gametoken(self.state[i][j])
 				if j != 2: currentline += " "
 			currentline += " |"
 			print(currentline)
-			currentline = "| "
-		print(" ------- ")
+			if i == 0:
+				currentline = " (Player: " + GameBoard.gametoken(self.turn) + ")  | "
+			else:
+				currentline = "              | "
+		print("               ------- ")
 	
 	def getTurn(self):
 		return self.turn
