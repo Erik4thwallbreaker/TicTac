@@ -75,6 +75,8 @@ class GameBoard:
 		hotkey = input("Which piece do you want to remove? :")
 		while not (hotkey in (["1","4","7","q","a","z"]+["2","5","8","w","s","x"]+["3","6","9","e","d","c"])):
 			hotkey = input("Invalid key. Which piece do you want to remove? :")
+		while not self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] == self.turn % 2:
+			hotkey = input("Illegal move. Please select one of your own pieces to remove: ")
 		self.rem(hotkey)
 
 	def mirrorBoard(self):
