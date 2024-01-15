@@ -96,8 +96,7 @@ class GameBoard:
 		return -1
 
 	def playTurn(self):
-		print("   Turn %r: (Player %r)   " %(self.turn, self.turn % 2) )
-		print("________________________")
+		print("_____________________________________")
 		self.print()
 		if self.turn >= 6: self.askForRemoval()
 		self.askForPlacement()
