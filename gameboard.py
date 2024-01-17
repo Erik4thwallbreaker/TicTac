@@ -71,12 +71,17 @@ class GameBoard:
 			hotkey = input("Illegal move. Please select an empty square: ")
 		self.pla(hotkey)
 		
+	#static method for validKey?
 	def askForRemoval(self):
+		# Inner function for legalKey.
 		hotkey = input("Which piece do you want to remove? :")
-		while not (hotkey in (["1","4","7","q","a","z"]+["2","5","8","w","s","x"]+["3","6","9","e","d","c"])):
-			hotkey = input("Invalid key. Which piece do you want to remove? :")
-		while not self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] == self.turn % 2:
-			hotkey = input("Illegal move. Please select one of your own pieces to remove: ")
+		validKey = hotkey in ["1","4","7","q","a","z"]+["2","5","8","w","s","x"]+["3","6","9","e","d","c"]
+		legalKey = validKey and 0 <= self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] == self.turn % 2
+		while not validKey or not legalKey:
+			if not validKey: hotkey = input("Invalid key. Which piece do you want to remove? :")
+			if not legalKey: hotkey = input("Illegal move. Please select one of your own pieces to remove: ")
+			validKey = hotkey in ["1","4","7","q","a","z"]+["2","5","8","w","s","x"]+["3","6","9","e","d","c"]
+			legalKey = validKey and 0 <= self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] == self.turn % 2
 		self.rem(hotkey)
 
 	def mirrorBoard(self):
