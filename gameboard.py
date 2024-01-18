@@ -63,6 +63,10 @@ class GameBoard:
 	def incTurn(self):
 		self.turn = self.turn + 1
 		
+	@staticmethod
+	def validKey(hotkey):
+		return hotkey in ["1","4","7","q","a","z"] + ["2","5","8","w","s","x"] + ["3","6","9","e","d","c"] 
+
 	def askForPlacement(self):
 		hotkey = input("Where do you want to place your piece? :")
 		while not (hotkey in (["1","4","7","q","a","z"]+["2","5","8","w","s","x"]+["3","6","9","e","d","c"])):
