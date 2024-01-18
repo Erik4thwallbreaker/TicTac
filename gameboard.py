@@ -67,7 +67,7 @@ class GameBoard:
 	def validKey(hotkey):
 		return hotkey in ["1","4","7","q","a","z"] + ["2","5","8","w","s","x"] + ["3","6","9","e","d","c"] 
 
-	def legalKey(self, key):
+	def _legalKey(self, key):
 		return 0 <= self.state[GameBoard.gety(key)][GameBoard.getx(key)] == self.turn % 2
 
 	def askForPlacement(self):
@@ -80,9 +80,9 @@ class GameBoard:
 		
 	def askForRemoval(self):
 		hotkey = input("Which piece do you want to remove? :")
-		while not GameBoard.validKey(hotkey) or not self.legalKey(hotkey):
+		while not GameBoard.validKey(hotkey) or not self._legalKey(hotkey):
 			if not GameBoard.validKey(hotkey): hotkey = input("Invalid key. Which piece do you want to remove? :")
-			elif not self.legalKey(hotkey): hotkey = input("Illegal move. Please select one of your own pieces to remove: ")
+			elif not self._legalKey(hotkey): hotkey = input("Illegal move. Please select one of your own pieces to remove: ")
 		self.rem(hotkey)
 
 	def mirrorBoard(self):
