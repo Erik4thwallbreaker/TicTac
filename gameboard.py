@@ -70,8 +70,8 @@ class GameBoard:
 	def _legalPlaceKey(self, hotkey):
 		return self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] == -1
 
-	def _legalRemoveKey(self, key):
-		return 0 <= self.state[GameBoard.gety(key)][GameBoard.getx(key)] == self.turn % 2
+	def _legalRemoveKey(self, hotkey):
+		return 0 <= self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] == self.turn % 2
 
 	def askForPlacement(self):
 		hotkey = input("Where do you want to place your piece? :")
