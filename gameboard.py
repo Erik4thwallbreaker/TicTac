@@ -115,6 +115,18 @@ class GameBoard:
 		self.turn += 1
 		print()
 
+	def playGame(self):
+		winner = -1
+		while winner == -1:
+			self.playTurn()
+			winner = self.hasWon()
+		self.turn -= 1		#Counteract the turn increase that happens after every turn.k
+		print("_____________________________________")
+		print("           - Game Finished -        ")
+		print("_____________________________________")
+		self.print()
+		print("Player " + GameBoard.gametoken(self.turn) + " has won. Congratulations!")
+		return
 	#TODO:	
 	#		Make a single helping method to give the correct string tokens for each player X and O.
 	#		Edit the print() method to display game turn on the same line.
