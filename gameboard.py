@@ -75,10 +75,9 @@ class GameBoard:
 
 	def askForPlacement(self):
 		hotkey = input("Where do you want to place your piece? :")
-		while not (hotkey in (["1","4","7","q","a","z"]+["2","5","8","w","s","x"]+["3","6","9","e","d","c"])):
-			hotkey = input("Invalid key. Where do you want to place your piece? :")
-		while not self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] == -1:
-			hotkey = input("Illegal move. Please select an empty square: ")
+		while not GameBoard._validKey(hotkey) or not self._legalPlaceKey(hotkey):
+			if not GameBoard._validKey(hotkey): hotkey = input("Invalid key. Where do you want to place your piece? :")
+			elif not self._legalPlaceKey(hotkey): hotkey = input("Illegal move. Place select an empty square: ")
 		self.pla(hotkey)
 		
 	def askForRemoval(self):
