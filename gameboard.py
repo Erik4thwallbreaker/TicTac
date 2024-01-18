@@ -67,6 +67,9 @@ class GameBoard:
 	def _validKey(hotkey):
 		return hotkey in ["1","4","7","q","a","z"] + ["2","5","8","w","s","x"] + ["3","6","9","e","d","c"] 
 
+	def _legalPlaceKey(self, hotkey):
+		return self.state[GameBoard.gety(hotkey)][GameBoard.getx(hotkey)] == -1
+
 	def _legalRemoveKey(self, key):
 		return 0 <= self.state[GameBoard.gety(key)][GameBoard.getx(key)] == self.turn % 2
 
