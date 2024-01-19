@@ -15,7 +15,7 @@ class GameBoard:
 
 	def print(self):
 		print("               ------- ")
-		currentline = " Turn: " + str(self.turn) + "      | "
+		currentline = " Turn: " + str(self.turn) + " "*(7-min(len(str(self.turn)), 7)) + "| "
 		for i in range(3):
 			for j in range(3):
 				currentline += GameBoard.gametoken(self.state[i][j])
